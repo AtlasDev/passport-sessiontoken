@@ -2,6 +2,10 @@
 
 A [Passport](https://github.com/jaredhanson/passport) strategy based on [passport-localapikey](https://github.com/cholalabs/passport-localapikey).
 
+## What changed?
+ - Now also looks in headers for the token.
+ - Custom token title
+
 ## Installation
     $ npm install passport-sessiontoken
     
