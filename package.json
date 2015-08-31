@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/AtlasDev/passport-localapikey.git"
+    "url": "git://github.com/AtlasDev/passport-sessiontoken.git"
   },
   "bugs": {
     "url": "https://github.com/AtlasDev/passport-sessiontoken/issues"
