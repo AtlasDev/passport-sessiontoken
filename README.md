@@ -3,7 +3,7 @@
 A [Passport](https://github.com/jaredhanson/passport) strategy based on [passport-localapikey](https://github.com/cholalabs/passport-localapikey).
 
 ## Installation
-    $ npm install passport-localapikey
+    $ npm install passport-sessiontoken
     
 ## Credits
  - [AtlasDev](https://www.atlasdev.nl)
