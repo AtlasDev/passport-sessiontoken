@@ -10,7 +10,8 @@ A [Passport](https://github.com/jaredhanson/passport) strategy based on [passpor
     $ npm install passport-sessiontoken
     
 ## Usage
-    passport.use(new LocalAPIKeyStrategy(
+### Define Strategy
+    passport.use(new SessionStrategy(
         function(apikey, done) {
             User.findOne({ apikey: apikey }, function (err, user) {
                 if (err) { return done(err); }
@@ -19,6 +20,14 @@ A [Passport](https://github.com/jaredhanson/passport) strategy based on [passpor
             });
         }, {header: 'customHeader', field: 'customField'}
     ));
+    
+### Authenticate in request
+    app.post('/api/authenticate', 
+        passport.authenticate('sessiontoken', { session: false,failureRedirect: '/api/unauthorized' }),
+        function(req, res) {
+            res.json({ message: "Authenticated" })
+        }
+    );
     
 ## Default fields
  - header: x-token
