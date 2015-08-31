@@ -1,0 +1,44 @@
+{
+  "name": "passport-sessiontoken",
+  "version": "0.1.0",
+  "description": "Session token authentication strategy for Passport.",
+  "author": {
+    "name": "Dany Sluijk",
+    "email": "info@atlasdev.nl",
+    "url": "https://www.atlasdev.nl"
+  },
+  "contributors": [
+    {
+      "name": "Sudhakar Mani",
+      "email": "mail4sudhakar@gmail.com",
+      "url": "http://www.sudhakarmani.com/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AtlasDev/passport-localapikey.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AtlasDev/passport-sessiontoken/issues"
+  },
+  "main": "./lib/passport-sessiontoken",
+  "dependencies": {
+    "passport": "~0.3.0"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "keywords": [
+    "passport",
+    "passport session",
+    "session token",
+    "auth",
+    "authentication"
+  ]
+}
