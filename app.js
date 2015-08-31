@@ -53,7 +53,7 @@ Strategy.prototype.authenticate = function(req, options) {
     }
 
     var _this = this;
-    this._verify(apikey, function (err, user, info) {
+    this._verify(key, function (err, user, info) {
         if (err) { return _this.error(err); }
         if (!user) { return _this.fail(info); }
         _this.success(user, info);
@@ -64,4 +64,4 @@ Strategy.prototype.authenticate = function(req, options) {
 /**
  * Export `Strategy`.
  */
-module.exports = Strategy;
+module.exports.Strategy = Strategy;

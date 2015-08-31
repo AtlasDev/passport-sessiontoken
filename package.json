@@ -1,6 +1,6 @@
 {
   "name": "passport-sessiontoken",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Session token authentication strategy for Passport.",
   "author": {
     "name": "Dany Sluijk",
@@ -34,11 +34,20 @@
       "url": "http://www.opensource.org/licenses/MIT"
     }
   ],
+  "main": "./app.js",
   "keywords": [
     "passport",
     "passport session",
     "session token",
     "auth",
     "authentication"
-  ]
+  ],
+  "readme": "# passport-sessiontoken\r\n\r\nA [Passport](https://github.com/jaredhanson/passport) strategy based on [passport-localapikey](https://github.com/cholalabs/passport-localapikey).\r\n\r\n## What changed?\r\n - Now also looks in headers for the token.\r\n - Custom token title\r\n\r\n## Installation\r\n    $ npm install passport-sessiontoken\r\n    \r\n## Usage\r\n### Define Strategy\r\n    passport.use(new SessionStrategy(\r\n        function(apikey, done) {\r\n            User.findOne({ apikey: apikey }, function (err, user) {\r\n                if (err) { return done(err); }\r\n                if (!user) { return done(null, false); }\r\n                return done(null, user);\r\n            });\r\n        }, {header: 'customHeader', field: 'customField'}\r\n    ));\r\n    \r\n### Authenticate in request\r\n    app.post('/api/authenticate', \r\n        passport.authenticate('sessiontoken', { session: false,failureRedirect: '/api/unauthorized' }),\r\n        function(req, res) {\r\n            res.json({ message: \"Authenticated\" })\r\n        }\r\n    );\r\n    \r\n## Default fields\r\n - header: x-token\r\n - Body & Query: token\r\n    \r\n## Field order\r\n - Header\r\n - Body\r\n - Query (Not recommented)\r\n    \r\n## Credits\r\n - [AtlasDev](https://www.atlasdev.nl)\r\n\r\n## Licence\r\nThe MIT License (MIT)\r\n\r\nCopyright (c) 2015 Dany Sluijk\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy\r\nof this software and associated documentation files (the \"Software\"), to deal\r\nin the Software without restriction, including without limitation the rights\r\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\ncopies of the Software, and to permit persons to whom the Software is\r\nfurnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in all\r\ncopies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\nSOFTWARE.\r\n",
+  "readmeFilename": "README.md",
+  "gitHead": "952f8c5da54839f81390998bb241a93b8ff96cd4",
+  "homepage": "https://github.com/AtlasDev/passport-sessiontoken#readme",
+  "_id": "passport-sessiontoken@0.1.0",
+  "scripts": {},
+  "_shasum": "1f0b6b802dae362798800f460c35d955f1e70084",
+  "_from": "passport-sessiontoken@>=0.1.0 <0.2.0"
 }
