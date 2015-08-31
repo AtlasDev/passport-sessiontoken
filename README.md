@@ -9,6 +9,26 @@ A [Passport](https://github.com/jaredhanson/passport) strategy based on [passpor
 ## Installation
     $ npm install passport-sessiontoken
     
+## Usage
+    passport.use(new LocalAPIKeyStrategy(
+        function(apikey, done) {
+            User.findOne({ apikey: apikey }, function (err, user) {
+                if (err) { return done(err); }
+                if (!user) { return done(null, false); }
+                return done(null, user);
+            });
+        }, {header: 'customHeader', field: 'customField'}
+    ));
+    
+## Default fields
+ - header: x-token
+ - Body & Query: token
+    
+## Field order
+ - Header
+ - Body
+ - Query (Not recommented)
+    
 ## Credits
  - [AtlasDev](https://www.atlasdev.nl)
 
